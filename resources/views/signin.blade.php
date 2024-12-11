@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Signin</title>
 </head>
 <body>
-    <h1>Sign In</h1>
-    <form action="{{ route('signin') }}" method="POST">
+    <h1>Signin</h1>
+    
+    @if(session('error'))
+        <p style="color: red;">{{ session('error') }}</p>
+    @endif
+
+    <form method="POST" action="/signin">
         @csrf
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
-        <button type="submit">Sign In</button>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <button type="submit">Login</button>
     </form>
 </body>
 </html>

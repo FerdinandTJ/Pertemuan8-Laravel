@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
 <body>
-    <h1>Welcome to the Home Page</h1>
-    <p>This is the main page of the application.</p>
+    <h1>Selamat Datang di Aplikasi Kami!</h1>
+    @if(session('success'))
+        <p style="color: green;">{{ session('success') }}</p>
+    @endif
 </body>
 </html>
